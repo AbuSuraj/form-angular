@@ -44,10 +44,12 @@
     </div>
   </div>
   <div class="form-group mt-3">
-   <select class="custom-select" name="topic" [(ngModel)] ="userModel.topic">
-    <option value=""> I am interested in </option>
+   <select #topic="ngModel" name="topic" (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)" [class.is-invalid] ="topicHasError && topic.touched"
+    class="custom-select"  [(ngModel)] ="userModel.topic">
+    <option value="default"> I am interested in </option>
     <option *ngFor="let topic of topics" >{{topic}}</option>
    </select>
+   <small class="text-danger" [class.d-none]="! topicHasError || topic.untouched "> Please select a option</small>
   </div>
 
   <div class="my-3">

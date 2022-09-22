@@ -8,5 +8,13 @@ import { User } from './user';
 export class AppComponent {
   title = 'FORM';
   topics = ['Angular', 'React', 'VUe', 'NextJs'];
-  userModel = new User('', '', 2,'','', false);
+  userModel = new User('', '', 2,'default','', false);
+  topicHasError = true;
+  validateTopic(value: string){
+    if(value ==='default')
+    this.topicHasError = true;
+
+  else
+    this.topicHasError = false;
+}
 }
