@@ -8,5 +8,5 @@ import { User } from './user';
 export class AppComponent {
   title = 'FORM';
   topics = ['Angular', 'React', 'VUe', 'NextJs'];
-  userModel = new User('Rob', 'rob@gmail.com', 5423431,'','morning', true);
+  userModel = new User('', '', 2,'','', false);
 }
